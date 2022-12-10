@@ -29,4 +29,8 @@ class teacher(models.Model):
     subject = models.ForeignKey(subject, on_delete=models.CASCADE, blank=True)
     school = models.ForeignKey(school, on_delete=models.CASCADE, blank = True)
 
+    def __str__(self):
+        return f"{self.name}"
     
+    def get_absolute_url(self):
+        return reverse("index")
